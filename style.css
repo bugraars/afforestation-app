@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(107, 107, 107);
+
+}
+.test{
+    z-index: 1;
+}
+.treeType{
+    border-radius: 5px;
+}
+#map {
+    height:70vh;
+    border: 1px solid rgb(70, 70, 70);
+    border-radius: 8px;
+  }
+#alert-container{
+    height: 5vh;
+}
+.upPanel{
+    background-color: rgb(70, 70, 70);
+    border-radius: 4px;
+    border: 1px solid rgb(70, 70, 70);
+}
+/* #area{
+    background-color: whitesmoke;
+} */
