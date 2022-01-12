@@ -52,8 +52,7 @@ function selectColor(color) {
     colorButtons[currColor].style.border = currColor == color ? '2px solid #789' : '2px solid #fff';
   }
 
-  // Retrieves the current options from the drawing manager and replaces the
-  // stroke or fill color as appropriate.
+
   var polylineOptions = drawingManager.get('polylineOptions');
   polylineOptions.strokeColor = color;
   drawingManager.set('polylineOptions', polylineOptions);
@@ -118,8 +117,7 @@ function initialize() {
     fillOpacity: 0.45,
     editable: true
   };
-  // Creates a drawing manager attached to the map that allows the user to draw
-  // markers, lines, and shapes.
+
   drawingManager = new google.maps.drawing.DrawingManager({
     drawingMode: google.maps.drawing.OverlayType.POLYGON,
     markerOptions: {
@@ -136,11 +134,8 @@ function initialize() {
 
   google.maps.event.addListener(drawingManager, 'overlaycomplete', function (e) {
     if (e.type != google.maps.drawing.OverlayType.MARKER) {
-      // Switch back to non-drawing mode after drawing a shape.
       drawingManager.setDrawingMode(null);
 
-      // Add an event listener that selects the newly-drawn shape when the user
-      // mouses down on it.
       var newShape = e.overlay;
       newShape.type = e.type;
       google.maps.event.addListener(newShape, 'click', function () {
@@ -155,13 +150,10 @@ function initialize() {
       // <i class="bi bi-calculator-fill"></i>  <strong>area m²</strong>'dir.<br>
       //                    <strong>${num}*</strong>  <strong>${treeType()}</strong> fidanı dikilebilir.`
       //                   ;
-      Adet
       setSelection(newShape);
     }
   });
 
-  // Clear the current selection when the drawing mode is changed, or when the
-  // map is clicked.
   google.maps.event.addListener(drawingManager, 'drawingmode_changed', clearSelection);
   google.maps.event.addListener(map, 'click', clearSelection);
   google.maps.event.addDomListener(document.getElementById('delete-button'), 'click', deleteSelectedShape);
