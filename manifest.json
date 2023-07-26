@@ -1,9 +1,8 @@
-{
+{   "short_name": "afforestation",
     "name": "https://bugraars.github.io/afforestation.github.io/",
-    "short_name": "afforestation",
     "theme_color": "#ffffff",
     "background_color": "#1f1f1f",
     "start_url": "/",
     "display": "standalone",
     "orientation": "portrait"
-  }
+}
